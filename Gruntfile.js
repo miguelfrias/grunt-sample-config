@@ -54,6 +54,16 @@ module.exports = function(grunt) {
         report: 'min',
       },
       prod: {
+        
+        compress: {
+          drop_console: true, // Remove console log 
+          // The following two options, remove debug code block for production
+s
+          global_defs: {
+            "DEBUG": false,
+          },
+          dead_code: true,
+        },
 	// Multiple files
         files: {
           'build/libs.pkg.min.js': ['build/libs.pkg.js'],
